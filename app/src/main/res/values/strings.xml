@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TwentyFour</string>
+    <string name="game_name_24">24</string>
+    <string name="level_select">Level Select</string>
+    <string name="timed_trials">Timed Trials</string>
+    <string name="endless">Endless</string>
+    <string name="instructions">Instructions</string>
+</resources>

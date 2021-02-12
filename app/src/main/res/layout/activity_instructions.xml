@@ -1,9 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3A3E54"
     tools:context=".InstructionsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/game_name_layout"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="#C0ADC5">
+
+        <TextView
+            android:id="@+id/game_name_text"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="@string/game_name_24"
+            android:textColor="#000000"
+            android:textSize="50sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/instructions_text"
+        android:background="@color/white"
+        android:layout_width="350dp"
+        android:layout_height="515dp"
+        android:layout_below="@+id/game_name_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_below="@+id/instructions_text"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginStart="170dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/back"
+            android:textColor="#000000"
+            app:backgroundTint="#ebebeb"
+            android:textSize="20sp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp">
+        </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/next"
+            android:textColor="#000000"
+            app:backgroundTint="#ebebeb"
+            android:textSize="20sp">
+        </Button>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

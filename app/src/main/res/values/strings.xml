@@ -5,4 +5,36 @@
     <string name="timed_trials">Timed Trials</string>
     <string name="endless">Endless</string>
     <string name="instructions">Instructions</string>
+    <string name="instructions_text_1"> In this game, you will be given 4
+        different numbers initially from a set of cards. The numbers will be
+        from 1 to 13 inclusive. You will try to set up a mathematical
+        equation using only arithmetic with all 4 numbers to result in an
+        answer of exactly 24. If you get the answer of 24, you win.
+        Otherwise, you can try press the reset button to try again. You have
+        to click a number before you click a card and before you click the
+        2nd card, just like how you would write it in math. Otherwise, this
+        program does not work and ignores your request. Attached on the right
+        is a Demo that you can try out right now. </string>
+    <string name="instructions_text_2"> For this page and all
+        other pages, you can use the buttons or press a single key to indicate
+        what action you want to perform. If you press "e" or "E", that exits
+        the page if an Exit button exists. In the same manner, clicking the
+        Exit button exists that page. You can use "r" or "R" as replacements
+        for the Reset button, or you can just click the Reset button. You
+        can also type the operation instead of clicking if you prefer. The
+        rest of the buttons must be pressed, and cannot be used with the
+        keyboard, because they operate very differently; in order to give
+        you the best experience possible, those were changed to only button
+        presses. This game also has 3 different gamemodes along with the
+        demo: Practice mode, with many different levels and difficulties
+        that you can try; Timed Trials mode, where you are timed to complete
+        10 different levels within 10 minutes of difficulties "Casual" and
+        "Challenging". If you win on that gamemode, you are added to the
+        leaderboard! The last mode is Endless mode, where you can choose
+        which difficulty you wish to play at and you can just continuously
+        play the game without end! It's completely stress-free and can help
+        improve your skills before you rush into Timed Trials mode. Good
+        luck and have fun!</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
 </resources>

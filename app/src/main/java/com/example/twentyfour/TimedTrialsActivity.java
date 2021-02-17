@@ -28,7 +28,6 @@ public class TimedTrialsActivity extends AppCompatActivity {
     private boolean firstCardClicked, oneOperationClicked, secondCardClicked;
     private int firstCardIndex, oneOperationIndex, secondCardIndex;
     private RunGame runGame;
-    private boolean winRound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,22 +48,10 @@ public class TimedTrialsActivity extends AppCompatActivity {
      * secondCardClicked.
      */
     private void startRound() {
-        winRound = false;
+        Problem problem = DataFromFile.getRandomProblem();
+        cardValuesOriginal = problem.getValues();
 
-        //TODO - temporary. replace reading from file capability
-        cardValuesOriginal = new String[]{"1", "2", "3", "4"};
-        cardValues = new String[4];
-
-        //set cardValues to store the values of cardValuesOriginal
-        for(int i = 0; i < cardValuesOriginal.length; i++)
-            cardValues[i] = cardValuesOriginal[i];
-        runGame.resetCardValues();
-        runGame.setCardValues(cardValuesOriginal);
-        setCardValues();
-
-        cardsClicked = new boolean[]{false, false, false, false};
-        operationsClicked = new boolean[]{false, false, false, false};
-        firstCardClicked = oneOperationClicked = secondCardClicked = false;
+        resetOnClick();
     }
 
     /**
@@ -103,8 +90,8 @@ public class TimedTrialsActivity extends AppCompatActivity {
 
     /**
      * Sets the text of the cards to cardValues and hides cards without a
-     * value. Checks if won, and if so, changes winRound to true and makes a
-     * Toast tellin the user that they won.
+     * value. Checks if won, and if so, makes a Toast telling the user that
+     * they won and starts a new round.
      */
     private void setCardValues() {
         //set the text of the cards to the cardValues
@@ -118,12 +105,11 @@ public class TimedTrialsActivity extends AppCompatActivity {
         //check if user won. happens if there is only 1 cardValue left and
         // it is equal to "24"
         if(cardValues.length == 1 && "24".equals(cardValues[0])) {
-            winRound = true;
-
             //TODO - replace win info with design element instead of Toast
             Toast.makeText(getApplicationContext(),
                     "You win this round!",
                     Toast.LENGTH_SHORT).show();
+            startRound();
         }
 
     }
@@ -266,18 +252,33 @@ public class TimedTrialsActivity extends AppCompatActivity {
     }
 
     /**
-     * Called when the user clicks the reset button. Resets everything for
-     * this round.
+     * Called when the user clicks the reset button. Calls resetOnClick().
      * @param v the view of the reset button
      */
     public void resetOnClick(View v) {
-        //TODO - change implementation of this method after startRound gains
-        // the file reading capability
-        startRound();
+        resetOnClick();
+    }
+
+    /**
+     * Called when the user clicks the reset button. Resets everything for
+     * this round.
+     */
+    public void resetOnClick() {
+        cardValues = new String[4];
+
+        //set cardValues to store the values of cardValuesOriginal
+        for(int i = 0; i < cardValuesOriginal.length; i++)
+            cardValues[i] = cardValuesOriginal[i];
+        runGame.resetCardValues();
+        runGame.setCardValues(cardValuesOriginal);
+        setCardValues();
+
+        cardsClicked = new boolean[]{false, false, false, false};
+        operationsClicked = new boolean[]{false, false, false, false};
+        firstCardClicked = oneOperationClicked = secondCardClicked = false;
 
         for(Button card : cards) {
             card.setVisibility(View.VISIBLE);
         }
     }
-
 }

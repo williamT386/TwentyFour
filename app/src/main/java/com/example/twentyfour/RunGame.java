@@ -1,5 +1,7 @@
 package com.example.twentyfour;
 
+import android.util.Log;
+
 /**
  * TimedTrialsActivity.java
  * Operates the game simulation.
@@ -12,7 +14,7 @@ public class RunGame {
     private String[] cardValues; //store as String to handle fractions
 
     public RunGame() {
-        cardValues = new String[4];
+        resetCardValues();
     }
 
     /**
@@ -84,6 +86,14 @@ public class RunGame {
     private int findIntFromString(String value) {
         int intValue = 0;
         int placeHolderCount = 1;
+        int start = 0;
+
+        //if the String value is negative, start checking from index 1
+        if(value.charAt(0) == '-')
+            start = 1;
+
+        value = value.substring(start);
+
         //converts each digit in the String into an int and adds it in
         // the correct digit into intValue 
         for(int i = value.length() - 1; i >= 0; i--) {
@@ -93,9 +103,9 @@ public class RunGame {
         }
         
         //if the String was negative, then make the int negative
-        if(value.charAt(0) == '-')
+        if(start == 1)
             intValue = -intValue;
-        
+
         return intValue;
     }
     
@@ -333,7 +343,6 @@ public class RunGame {
         String answer;
         int answerNumerator;
         int answerDenominator;
-
         if(numeratorIntFirst == 0 && numeratorIntSecond == 0)
             answer = firstValue * secondValue + "";
         else if (numeratorIntFirst != 0 && numeratorIntSecond == 0) {
@@ -484,5 +493,12 @@ public class RunGame {
             answer = "" + changeNumerator;
 
         return answer;
+    }
+
+    /**
+     * Resets cardValues to a new String array of length 4, holding null.
+     */
+    public void resetCardValues() {
+        cardValues = new String[4];
     }
 }

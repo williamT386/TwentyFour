@@ -52,20 +52,19 @@ public class TimedTrialsActivity extends AppCompatActivity {
         winRound = false;
 
         //TODO - temporary. replace reading from file capability
-        cardValuesOriginal = new String[]{"1", "1", "11", "11"};
+        cardValuesOriginal = new String[]{"1", "2", "3", "4"};
         cardValues = new String[4];
 
         //set cardValues to store the values of cardValuesOriginal
         for(int i = 0; i < cardValuesOriginal.length; i++)
             cardValues[i] = cardValuesOriginal[i];
+        runGame.resetCardValues();
         runGame.setCardValues(cardValuesOriginal);
         setCardValues();
 
         cardsClicked = new boolean[]{false, false, false, false};
         operationsClicked = new boolean[]{false, false, false, false};
         firstCardClicked = oneOperationClicked = secondCardClicked = false;
-
-
     }
 
     /**
@@ -218,7 +217,7 @@ public class TimedTrialsActivity extends AppCompatActivity {
                     //if no other button is clicked and the first card is
                     // clicked, then change this button to clicked
                     operationLayouts[index].setBackgroundColor(Color.parseColor(
-                            "#0D98BA"));
+                            "#2B5329"));
                     operationsClicked[index] = true;
                     oneOperationClicked = true;
                     oneOperationIndex = index;
@@ -265,4 +264,20 @@ public class TimedTrialsActivity extends AppCompatActivity {
         cardsClicked[secondCardIndex] = false;
         secondCardClicked = false;
     }
+
+    /**
+     * Called when the user clicks the reset button. Resets everything for
+     * this round.
+     * @param v the view of the reset button
+     */
+    public void resetOnClick(View v) {
+        //TODO - change implementation of this method after startRound gains
+        // the file reading capability
+        startRound();
+
+        for(Button card : cards) {
+            card.setVisibility(View.VISIBLE);
+        }
+    }
+
 }

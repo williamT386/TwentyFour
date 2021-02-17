@@ -140,7 +140,7 @@
                 app:backgroundTint="#ebebeb"
                 android:layout_margin="5dp"
                 android:onClick="cardOnClick"
-                android:textSize="30sp">
+                android:textSize="25sp">
             </Button>
 
         </RelativeLayout>
@@ -160,7 +160,7 @@
                 app:backgroundTint="#ebebeb"
                 android:layout_margin="5dp"
                 android:onClick="cardOnClick"
-                android:textSize="30sp">
+                android:textSize="25sp">
             </Button>
         </RelativeLayout>
 
@@ -178,7 +178,7 @@
                 app:backgroundTint="#ebebeb"
                 android:layout_margin="5dp"
                 android:onClick="cardOnClick"
-                android:textSize="30sp">
+                android:textSize="25sp">
             </Button>
         </RelativeLayout>
 
@@ -198,7 +198,7 @@
                 app:backgroundTint="#ebebeb"
                 android:layout_margin="5dp"
                 android:onClick="cardOnClick"
-                android:textSize="30sp">
+                android:textSize="25sp">
             </Button>
         </RelativeLayout>
 

@@ -40,4 +40,8 @@
     <string name="back">Back</string>
     <string name="demo">Demo</string>
     <string name="is_first_card">This is the first card</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiply">*</string>
+    <string name="divide">/</string>
 </resources>

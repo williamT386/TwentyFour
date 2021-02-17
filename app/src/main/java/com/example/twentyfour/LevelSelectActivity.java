@@ -4,6 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+/**
+ * LevelSelectActivity.java
+ * Operates the LevelSelect gamemode.
+ *
+ * @author William Tang
+ * @since 2/16/2021
+ */
+
 public class LevelSelectActivity extends AppCompatActivity {
 
     @Override

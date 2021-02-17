@@ -9,7 +9,7 @@ import android.content.Intent;
  * This is an utilities java file for creating and returning an Intent.
  *
  * @author William Tang
- * @since 2/11/2020
+ * @since 2/11/2021
  */
 
 public class IntentUtilities {

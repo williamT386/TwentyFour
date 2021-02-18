@@ -26,45 +26,41 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Called when the user clicks the level select button. Starts the
-     * activity for LevelSelectActivity
+     * activity for LevelSelectActivity.
      * @param v the view for the level select button
      */
     public void levelSelectOnClick(View v) {
-        Intent intent = IntentUtilities.moveActivity(this,
-                LevelSelectActivity.class);
-        startActivity(intent);
+        startActivity(IntentUtilities.moveActivity(this,
+                LevelSelectActivity.class));
     }
 
     /**
      * Called when the user clicks the time trials button. Starts the
-     * activity for TimedTrialsActivity
+     * activity for TimedTrialsActivity.
      * @param v the view for the timed trials button
      */
     public void timedTrialsOnClick(View v) {
-        Intent intent = IntentUtilities.moveActivity(this,
-                TimedTrialsActivity.class);
-        startActivity(intent);
+        startActivity(IntentUtilities.moveActivity(this,
+                TimedTrialsActivity.class));
     }
 
     /**
      * Called when the user clicks the endless button. Starts the
-     * activity for EndlessActivity
+     * activity for EndlessActivity.
      * @param v the view for the endless button
      */
     public void endlessOnClick(View v) {
-        Intent intent = IntentUtilities.moveActivity(this,
-                EndlessActivity.class);
-        startActivity(intent);
+        startActivity(IntentUtilities.moveActivity(this,
+                EndlessActivity.class));
     }
 
     /**
      * Called when the user clicks the instructions button. Starts the
-     * activity for InstructionsActivity
+     * activity for InstructionsActivity.
      * @param v the view for the instructions button
      */
     public void instructionsOnClick(View v) {
-        Intent intent = IntentUtilities.moveActivity(this,
-                InstructionsActivity.class);
-        startActivity(intent);
+        startActivity(IntentUtilities.moveActivity(this,
+                InstructionsActivity.class));
     }
 }

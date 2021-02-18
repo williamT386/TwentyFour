@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3A3E54"
-    tools:context=".TimedTrialsActivity">
+    tools:context=".InstructionsGameActivity">
 
     <RelativeLayout
         android:id="@+id/game_name_layout"
@@ -237,5 +237,4 @@
         </Button>
 
     </LinearLayout>
-
 </RelativeLayout>

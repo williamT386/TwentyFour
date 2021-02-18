@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TwentyFour">
-        <activity android:name=".LevelSelectActivity"></activity>
+        <activity android:name=".InstructionsGameActivity"></activity>
+        <activity android:name=".InstructionsGameActivity" />
+        <activity android:name=".LevelSelectActivity" />
         <activity android:name=".TimedTrialsActivity" />
         <activity android:name=".EndlessActivity" />
         <activity android:name=".InstructionsActivity" />

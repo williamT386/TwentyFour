@@ -28,8 +28,6 @@ public class InstructionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_instructions);
         setAllView();
 
-        backButton.setVisibility(View.GONE);
-
         Context context = this.getApplicationContext();
         //set the test of instructions to the first text
         instructions.setText(context.getResources().getString(R.string.instructions_text_1));
@@ -66,12 +64,9 @@ public class InstructionsActivity extends AppCompatActivity {
                 nextButton.setText(R.string.demo);
                 break;
             case 3:
-                //hide the nextButton and instructions
-                nextButton.setVisibility(View.GONE);
-                instructions.setVisibility(View.GONE);
-
-                instructionsPage = 4;
-                //TODO - show demo
+                startActivity(IntentUtilities.moveActivity(this,
+                        InstructionsGameActivity.class));
+                finish();
                 break;
         }
     }
@@ -83,13 +78,15 @@ public class InstructionsActivity extends AppCompatActivity {
      */
     public void backOnClick(View v) {
         switch (instructionsPage) {
+            case 1:
+                startActivity(IntentUtilities.moveActivity(this,
+                        MainActivity.class));
+                finish();
+                break;
             case 2:
                 instructions.setText(this.getApplicationContext().getResources().
                         getString(R.string.instructions_text_1));
                 instructionsPage = 1;
-
-                //hides the backButton
-                backButton.setVisibility(View.GONE);
                 break;
             case 3:
                 instructions.setText(this.getApplicationContext().getResources().
@@ -99,15 +96,6 @@ public class InstructionsActivity extends AppCompatActivity {
                 //changes the text of the nextButton to "Next", if not
                 // already changed
                 nextButton.setText(R.string.next);
-                break;
-            case 4:
-                instructions.setText(this.getApplicationContext().getResources().
-                        getString(R.string.instructions_text_3));
-                instructionsPage = 3;
-
-                //show the instructions and nextButton
-                instructions.setVisibility(View.VISIBLE);
-                nextButton.setVisibility(View.VISIBLE);
                 break;
         }
     }

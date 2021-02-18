@@ -4,22 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-/**
- * TimedTrialsActivity.java
- * Operates the Timed Trials gamemode.
- * TODO - implement timer
- *
- * @author William Tang
- * @since 2/16/2021
- */
-
-public class TimedTrialsActivity extends AppCompatActivity {
+public class InstructionsGameActivity extends AppCompatActivity {
 
     private RelativeLayout[] cardLayouts, operationLayouts;
     private Button[] cards, operations;
@@ -32,7 +22,7 @@ public class TimedTrialsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timed_trials);
+        setContentView(R.layout.activity_game_instructions);
         setAllView();
 
         //create a RunGame instance
@@ -107,11 +97,9 @@ public class TimedTrialsActivity extends AppCompatActivity {
         if(cardValues.length == 1 && "24".equals(cardValues[0])) {
             //TODO - replace win info with design element instead of Toast
             Toast.makeText(getApplicationContext(),
-                    "You win this round!",
+                    "You won the demo!",
                     Toast.LENGTH_SHORT).show();
-            startRound();
         }
-
     }
 
     /**
@@ -173,8 +161,8 @@ public class TimedTrialsActivity extends AppCompatActivity {
         else if(!oneOperationClicked && !secondCardClicked) {
             //tell the user to click an operation first
             Toast.makeText(getApplicationContext(),
-                                    "Click an operation first.",
-                                    Toast.LENGTH_SHORT).show();
+                    "Click an operation first.",
+                    Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -289,7 +277,7 @@ public class TimedTrialsActivity extends AppCompatActivity {
      */
     public void backOnClick(View v) {
         startActivity(IntentUtilities.moveActivity(this,
-                MainActivity.class));
+                InstructionsActivity.class));
         finish();
     }
 }

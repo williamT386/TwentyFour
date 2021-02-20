@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void endlessOnClick(View v) {
         startActivity(IntentUtilities.moveActivity(this,
-                EndlessActivity.class));
+                DifficultySelect.class));
     }
 
     /**

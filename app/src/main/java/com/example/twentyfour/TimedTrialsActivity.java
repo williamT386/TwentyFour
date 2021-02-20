@@ -48,10 +48,51 @@ public class TimedTrialsActivity extends AppCompatActivity {
      * secondCardClicked.
      */
     private void startRound() {
-        Problem problem = DataFromFile.getRandomProblem();
-        cardValuesOriginal = problem.getValues();
+        Problem problem = DataFromFile.getRandomProblem(new int[]{1, 2});
+        cardValuesOriginal = shuffle(problem.getValues());
 
         resetOnClick();
+    }
+
+    /**
+     * Shuffles the cards into a random order.
+     * @param cardValuesIn the unshuffled cards
+     * @return the shuffled cards
+     */
+    public String[] shuffle(String[] cardValuesIn) {
+        //start off question originally with 4 values
+        String[] randomArray = new String[4];
+        int randomArrayIndex = 0;
+        //finishes when randomArray is filled up
+        while (randomArrayIndex < randomArray.length) {
+            int randomNumber = (int) (Math.random() * randomArray.length);
+
+            //special case if randomArrayIndex is 0, because
+            // randomArray has nothing
+            if (randomArrayIndex == 0) {
+                randomArray[randomArrayIndex] = cardValuesIn[randomNumber];
+                randomArrayIndex++;
+            } else {
+                //checks if randomArray contains the value at index
+                // randomNumber
+                boolean containsNumber = false;
+                for (int i = 0; i < randomArrayIndex; i++) {
+                    if (cardValuesIn[randomNumber].equals(randomArray[i])) {
+                        containsNumber = true;
+                        break;
+                    }
+                }
+
+                //if randomArray does not contain the value at index
+                // randomNumber, then add it and increment randomArrayIndex
+                if (!containsNumber) {
+                    randomArray[randomArrayIndex] = cardValuesIn[randomNumber];
+                    randomArrayIndex++;
+                }
+            }
+        }
+
+        return randomArray;
     }
 
     /**

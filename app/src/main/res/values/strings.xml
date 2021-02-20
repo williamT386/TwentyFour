@@ -45,4 +45,9 @@
     <string name="multiply">*</string>
     <string name="divide">/</string>
     <string name="reset">Reset</string>
+    <string name="choose_difficulty">Choose a difficulty for Endless mode:</string>
+    <string name="novice">Novice</string>
+    <string name="casual">Casual</string>
+    <string name="challenging">Challenging</string>
+    <string name="insane">Insane</string>
 </resources>

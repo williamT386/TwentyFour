@@ -146,13 +146,13 @@ public class TimedTrialsActivity extends AppCompatActivity {
         //check if user won. happens if there is only 1 cardValue left and
         // it is equal to "24"
         if(cardValues.length == 1 && "24".equals(cardValues[0])) {
+            startRound();
+
             //TODO - replace win info with design element instead of Toast
             Toast.makeText(getApplicationContext(),
-                    "You win this round!",
+                    "You won the demo!",
                     Toast.LENGTH_SHORT).show();
-            startRound();
         }
-
     }
 
     /**
@@ -214,8 +214,8 @@ public class TimedTrialsActivity extends AppCompatActivity {
         else if(!oneOperationClicked && !secondCardClicked) {
             //tell the user to click an operation first
             Toast.makeText(getApplicationContext(),
-                                    "Click an operation first.",
-                                    Toast.LENGTH_SHORT).show();
+                    "Click an operation first.",
+                    Toast.LENGTH_SHORT).show();
         }
 
     }

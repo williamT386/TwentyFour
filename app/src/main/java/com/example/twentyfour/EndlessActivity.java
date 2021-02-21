@@ -153,11 +153,12 @@ public class EndlessActivity extends AppCompatActivity {
         //check if user won. happens if there is only 1 cardValue left and
         // it is equal to "24"
         if(cardValues.length == 1 && "24".equals(cardValues[0])) {
+            startRound();
+
             //TODO - replace win info with design element instead of Toast
             Toast.makeText(getApplicationContext(),
                     "You win this round!",
                     Toast.LENGTH_SHORT).show();
-            startRound();
         }
 
     }
